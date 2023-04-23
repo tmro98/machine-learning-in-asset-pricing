@@ -9,14 +9,14 @@ $$
 with
 
 $$
-\mathbb{E}_t[r_{i,t+1} \mid \mathcal{F}_t] = g(\bm x_{i,t}),
+\mathbb{E}_t[r_{i,t+1} \mid \mathcal{F}_t] = g(x_{i,t}),
 $$
 
 where 
 
 - $\mathbb{E}_t[r_{i,t+1} \mid \mathcal{F}_t]$ is the time $t$ conditional expectation of $r_{i,t+1}$, given the information set $\mathcal{F}_t$ 
 - $\varepsilon_{t,i+1}$ is a zero-mean unpredictable disturbance term
-- $g(.)$ is a flexible function of predictor variables, which are expressed in terms of the P-dimensional vector $\bm x_{i,t}$
+- $g(.)$ is a flexible function of predictor variables, which are expressed in terms of the P-dimensional vector $x_{i,t}$
 
 The function $g(.)$ does neither depend on $i$ nor on $t$. This allows the model to leverage information from the entire panel (across stocks and  time) and lends stability to the model estimates (at least in theory).
   
@@ -34,7 +34,7 @@ with
 
 
 $$
-\mathbb{E}_t[r_{t+1} \mid \mathcal{F}_t] = g(\bm x_{t}).
+\mathbb{E}_t[r_{t+1} \mid \mathcal{F}_t] = g(x_{t}).
 $$
 
 Since the S&P500 is a good proxy for the US equity market as a whole, its excess return can be understood  as the equity risk premium (i.e. the market premium for bearing equity risk).
@@ -68,12 +68,12 @@ ML methods are characterized by:
 The out-of-sample $R^2$ statistic (Campbell and Thompson, 2008) is an evaluation metric commonly found in the return prediction literature (notation assumes a single time-series):
 
 $$
-R^2_{\textit{OOS}} = 1 - \frac{\sum^T_{t=T_1}(r_t-\hat r_{t\mid t-1})^2}{\sum^T_{t=T_1}(r_t-\bar r_{t\mid t-1})^2},
+R^2_{\textit{OOS}} = 1 - \frac{\sum (r_t-\hat r_{t\mid t-1})^2}{\sum (r_t-\bar r_{t\mid t-1})^2},
 $$
 
 where
 
-- $T_1$ is the time index of the test set's first observation 
+- the sum runs over the observations in the test set
 - $\hat r_{t\mid t-1}$ is the time $t-1$ prediction for $r_t$ (using only information available at time $t-1$, i.e. $\in \mathcal F_{t-1}$)
 - $\bar r_{t\mid t-1}$ is the historical average excess return measured at time $t-1$ (sometimes set to 0)
 
