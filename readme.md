@@ -14,7 +14,7 @@ $$
 
 where 
 
-- $\mathbb{E}_t[r_{i,t+1} \mid \mathcal{F}_t]$ is the time $t$ conditional expectation of $r_{i,t+1}$, given the information set $\mathcal{F}_t$ 
+- the term on the left hand side is the time $t$ conditional expectation of $r_{i,t+1}$, given the information set $\mathcal{F}_t$ 
 - $\varepsilon_{t,i+1}$ is a zero-mean unpredictable disturbance term
 - $g(.)$ is a flexible function of predictor variables, which are expressed in terms of the P-dimensional vector $x_{i,t}$
 
