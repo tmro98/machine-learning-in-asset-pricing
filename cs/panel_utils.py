@@ -2,8 +2,6 @@ import numpy
 import pandas 
 import datetime
 
-#'BB' 'KC'
-
 micro_cols = [
     'PPO', 'PVO', 'MOM10d', 'MOM60d', 'RSI', 'SRSI', 'SO', 'TSI', 'UO',
        'WR', 'EMV', 'FI', 'MFI', 'NVI', 'BBW', 'DC', 'UI', 'AI',
@@ -19,7 +17,7 @@ macro_cols = [
        'UNRATE', 'RF'
 ]
 
-def scale_interact_sort(df, micro_cols, macro_cols):
+def scale_interact_sort(df, micro_cols, macro_cols, interact = False):
     
     for date in df.index.unique():
         for feature in micro_cols:
@@ -32,9 +30,10 @@ def scale_interact_sort(df, micro_cols, macro_cols):
         time_max = df[col].values.max()
         df[col] = df[col].apply(lambda x: (x - time_min) / (time_max - time_min))
     
-    for col_macro in macro_cols:
-        for col_micro in micro_cols:
-            df[col_micro +"x"+ col_macro] = df[col_macro]*df[col_micro]
+    if interact:
+        for col_macro in macro_cols:
+            for col_micro in micro_cols:
+                df[col_micro +"x"+ col_macro] = df[col_macro]*df[col_micro]
             
     df.sort_index(inplace=True)
             
