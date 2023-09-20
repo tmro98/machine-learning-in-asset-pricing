@@ -3,18 +3,17 @@ import pandas
 import datetime
 
 micro_cols = [
-    'PPO', 'PVO', 'MOM10d', 'MOM60d', 'RSI', 'SRSI', 'SO', 'TSI', 'UO',
-       'WR', 'EMV', 'FI', 'MFI', 'NVI', 'BBW', 'DC', 'UI', 'AI',
-       'CCI', 'KST', 'MACD', 'MI', 'STC', 'TRIX', 'VI', 'BETA60d', 'BETA20d',
-       'BETA20d^2', 'CHBETA', 'VOLA20d', 'VOLA60d', 'CHVOLA', 'MAXRET',
-       'MINRET', 'CHMOM', 'RETURN'
+        'PPO', 'PVO', 'MOM10d', 'MOM60d', 'RSI', 'SRSI', 'SO', 'TSI', 'UO',
+       'WR', 'EMV', 'FI', 'MFI', 'NVI', 'BBW', 'DC', 'UI', 'AI', 'CCI', 'KST',
+       'MACD', 'MI', 'STC', 'TRIX', 'VI', 'BETA60d', 'BETA20d', 'BETA20d^2',
+       'CHBETA', 'VOLA20d', 'VOLA60d', 'CHVOLA', 'MAXRET', 'MINRET', 'CHMOM',
+       'RETURN', 'EXCESS_RETURN', 'AVG_EXCESS_RETURN',
 ]
 
 macro_cols = [
-    'MRKTMOM10d', 'MRKTMOM40d', 'MRKTVOLA',
-       'MRKT', 'DIVYIELD', 'EARNYIELD', 'PERATIO', 'T10Y2Y', 'TB6TB3', 'TB3',
-       'TB6', 'PRIMETB3', 'FFTB3', 'SENT1d', 'SENTCUM', 'SENTMA', 'CPI',
-       'UNRATE', 'RF'
+    'MRKTMOM10d', 'MRKTMOM40d', 'MRKTVOLA', 'MRKT', 'DIVYIELD',
+       'EARNYIELD', 'PERATIO', 'T10Y2Y', 'TB6TB3', 'TB3', 'TB6', 'PRIMETB3',
+       'FFTB3', 'SENT1d', 'SENTCUM', 'SENTMA', 'CPI', 'UNRATE', 'RF',
 ]
 
 def scale_interact_sort(df, micro_cols, macro_cols, interact = False):

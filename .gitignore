@@ -1,6 +1,7 @@
 keys.py
-.data
+.misc
 .vscode
+.data
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
